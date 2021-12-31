@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h3 class="text-center my-3">SignUp</h3>
+    <hr>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSignUpSubmit()">
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" formControlName='email'>
+        <div [class.is-invalid]="email.touched && !email.valid" *ngIf="email.touched && !email.valid">
+          <div *ngIf="email.errors?.required" class="text-danger"> Email is required</div>
+          <div *ngIf="email.errors?.email" class="text-danger"> Invalid Email</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName='password'>
+        <div *ngIf="password.touched && !password.valid">
+          <div *ngIf="password.errors?.required" class="text-danger"> Password is required</div>
+        </div>
+      </div>
+      <div class="mb-3 text-center">
+        <button type="submit" class="btn btn-primary my-3" [disabled]="signUpForm.invalid">SignUp</button>
+      </div>
+    </form>
+  </div>
+</div>
