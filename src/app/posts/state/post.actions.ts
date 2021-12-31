@@ -21,3 +21,5 @@ export const deletePostSuccess = createAction(DELETE_POST_SUCCESS, props<{id: st
 
 export const loadPosts = createAction(LOAD_POSTS);
 export const loadPostsSuccess = createAction(LOAD_POSTS_SUCCESS, props<{posts: Post[]}>());
+
+export const dummyAction = createAction('[dummy action]');
